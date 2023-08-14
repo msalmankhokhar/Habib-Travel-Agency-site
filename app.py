@@ -44,7 +44,7 @@ def add_new_package():
         except Exception as e:
             redirect_url = '/admin'
             interval = 10
-            e = "OOPS an error occured"
+            e = "oops! an error occured"
             return render_template('error.html', redirect_url=redirect_url, interval=interval, error=e)
 
 @app.route('/admin/edit-package/<string:slug>', methods=['GET', 'POST'])
@@ -69,7 +69,7 @@ def edit_package(slug):
         except Exception as e:
             redirect_url = '/admin'
             interval = 10
-            e = "OOPS an error occured"
+            e = "oops! an error occured"
             return render_template('error.html', redirect_url=redirect_url, interval=interval, error=e)
         
 
