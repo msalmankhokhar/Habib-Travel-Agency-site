@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+
+* {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    padding: 0px;
+}
+
+.navlogo{
+    width: 150px;
+    width: 15vw;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* column-gap: 9px;
+    column-gap: 2vw; */
+}
+header h1{
+    text-align: center;
+    font-size: 1.4vw;
+    color: #979797;
+    align-self: flex-end;
+}
+main{
+    /* width: 100vw; */
+    /* height: 100vh; */
+    /* display: flex;
+    column-gap: 10px; */
+}
+nav{
+    background-color: black;
+    padding: 5vh 3vw;
+    justify-content: center;
+}
+nav h1{
+    color: white;
+}
+.navlink{
+    color: white;
+}
+.content{
+    /* width: 100%; */
+    /* width: 80%; */
+    /* height: 100%; */
+    /* padding: 10px; */
+    /* background-color: white; */
+    /* box-shadow: 2px 2px 15px #e5e5e5; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh 5vw;
+}
+div.pkgcard{
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 3vw;
+    box-shadow: none;
+    column-gap: 1vw;
+}
+.pkgcard .cardimg{
+    border-radius: 0.5vw;
+    width: 25%;
+}
+.pkgcard div.cardimg img{
+    width: 356px;
+    width: 22vw;
+    height: 100%;
+}
+.cardheading1{
+    font-size: 1.3rem;
+}
+.desc{
+    /* display: flex; */
+}
+div.cardbtndiv{
+    align-self:stretch;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    row-gap: 10px;
+}
+a.btn.cardbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    border-radius: 0.5vw;
+    padding: 0.9vw;
+    padding: 18px;
+}
+a.cardbtn *{
+    font-size: 1.2vw;
+}
+.pkgcard div.cardtext{
+    /* width: 100%; */
+    width: fit-content;
+    padding: 0px;
+    row-gap: 10px;
+}
+.pkgcard div.cardtext div.desc{
+    width: 100%;
+    row-gap: 10px;
+}
+.pkgcard div.cardtext div.desc div.feature{
+    border-radius: 0.7vw;
+    padding: 1vw;
+}
+.pkgcard div.cardtext div.desc div.feature *{
+    font-size: 1.4vw;
+}
+.pkgcard div.cardtext div.desc div.feature svg {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+a.cardbtn svg{
+    width: 21px;
+    height: 21px;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+a.cardbtn.edit{}
+
+a.cardbtn.del{
+    background-color: rgb(197, 0, 0);
+    color: white;
+    border: 2px solid rgb(197, 0, 0);
+    cursor: pointer;
+}
+a.cardbtn.del:hover{
+    background-color: red;
+    border-color: red;
+}
+.cardheading1{
+    font-size: 2vw;
+}
+.btn.cardbtn.add{
+    align-self: flex-start;
+}

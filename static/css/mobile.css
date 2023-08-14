@@ -1,0 +1,11 @@
+nav{
+    flex-direction: column;
+    /* padding: 15px 0px; */
+    /* height: 35vh; */
+    justify-content: space-evenly;
+}
+nav ul{
+    flex-direction: column;
+    row-gap: 15px;
+    margin-bottom: 30px;
+}
