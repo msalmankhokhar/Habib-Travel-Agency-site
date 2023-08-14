@@ -4,13 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Pannel-AlHayyTravels</title>
+    <title>{% block title %}{% endblock title %}Admin Pannel - AlHayyTravels</title>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="static/css/admin/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/admin/style.css">
 </head>
+<style>
+    {% block style %}{% endblock style %}
+</style>
 
 <body>
+
+    {% block nav %}
     <nav>
         <h1 class="title">Admin Dashboard</h1>
         <!-- <ul>
@@ -20,8 +25,10 @@
             <li><a href="" class="navlink"></a></li>
         </ul> -->
     </nav>
+    {% endblock nav %}
+
     <main>
-        <!-- <div class="nav"></div> -->
+        {% block main %}
         <div class="content">
 
             <a href="/admin/add-new-package" class="btn cardbtn add">Add New Package</a>
@@ -68,7 +75,7 @@
                 </div>
                 <div class="cardbtndiv">
                     <a href="/view-package/{{pkg.slug}}" class="btn cardbtn view">View Details</a>
-                    <a href="/admin/edit-package/{{pkg.slug}}" class="btn cardbtn edit">Edit Package</a>
+                    <a href="/admin/edit-package" class="btn cardbtn edit">Edit Package</a>
                     <a href="/admin/delete-package/{{pkg.slug}}" class="btn cardbtn del">Delete Package</a>
                 </div>
             </div>
@@ -76,10 +83,14 @@
             {% endfor %}
 
         </div>
+        {% endblock main %}
     </main>
     
 </body>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> -->
-<script src="static/js/admin/script.js"></script>
+<script src="/static/js/admin/script.js"></script>
+<script>
+{% block js %}{% endblock js %}
+</script>
 
 </html>

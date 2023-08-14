@@ -31,7 +31,47 @@ def add_new_package():
         packageList = Packages.query.all()
         return render_template('admin/addpkg.html')
     elif request.method == 'POST':
-        return redirect(url_for('admin'))
+        title = request.form.get('title')
+        room = request.form.get('room')
+        duration = request.form.get('duration')
+        price = request.form.get('price')
+        slug = title.replace(" ", "-")
+        new_pkg = Packages(title=title, duration=duration, room=room, price=price, slug=slug)
+        try:
+            database.session.add(new_pkg)
+            database.session.commit()
+            return redirect(url_for('admin'))
+        except Exception as e:
+            redirect_url = '/admin'
+            interval = 10
+            e = "OOPS an error occured"
+            return render_template('error.html', redirect_url=redirect_url, interval=interval, error=e)
+
+@app.route('/admin/edit-package/<string:slug>', methods=['GET', 'POST'])
+def edit_package(slug):
+    selected_pkg = Packages.query.filter_by(slug=slug).first()
+    if request.method == 'GET':
+        return render_template('admin/edit-package.html', pkg=selected_pkg)
+    elif request.method == 'POST':
+        try:
+            title = request.form.get('title')
+            room = request.form.get('room')
+            duration = request.form.get('duration')
+            price = request.form.get('price')
+            modified_slug = title.replace(" ", "-")
+            selected_pkg.title = title
+            selected_pkg.slug = modified_slug
+            selected_pkg.room =room
+            selected_pkg.duration = duration
+            selected_pkg.price = price
+            database.session.commit()
+            return redirect(url_for('admin'))
+        except Exception as e:
+            redirect_url = '/admin'
+            interval = 10
+            e = "OOPS an error occured"
+            return render_template('error.html', redirect_url=redirect_url, interval=interval, error=e)
+        
 
 @app.route('/admin/delete-package/<string:slug>')
 def del_package(slug):

@@ -1,0 +1,23 @@
+{% extends 'admin/adminbase.html' %}
+
+{% block title %}Error ! {% endblock title %}
+
+{% block style %}{% endblock style %}
+
+{% block nav %}
+<nav>
+    <h1 class="title">Error Occcured</h1>
+</nav>
+{% endblock nav %}
+
+{% block main %}
+<h2>{{error}}</h2>
+{% endblock main %}
+
+{% block js %}
+
+document.body.onload = setInterval(() => {
+    location.href = "{{redirect_url}}"
+}, {{interval}});
+
+{% endblock js %}

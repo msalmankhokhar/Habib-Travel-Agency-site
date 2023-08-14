@@ -1,0 +1,64 @@
+{% extends 'admin/adminbase.html' %}
+
+{% block title %}Add Package - {% endblock title %}
+
+{% block style %}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    height: 100vh;
+    justify-content: center;
+}
+
+.form form{
+    /* align-self: stretch; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    width: 80%;
+}
+
+.form form input{
+    padding: 15px;
+    align-self:normal;
+    border-radius: 5px;
+    border: 1px solid rgb(175, 175, 175);
+    transition: outline 0.1s ease;
+}
+
+.form form input:focus{
+    outline: 3px solid #ff9e7b;
+}
+
+.btndiv{
+    display: flex;
+    column-gap: 5px;
+}
+
+{% endblock style %}
+
+<!-- {% block nav %}{% endblock nav %} -->
+
+{% block main %}
+
+<div class="form">
+<h1>Add New Package</h1>
+    <form action="/admin/add-new-package" method="post">
+        <input type="text" name="title" id="" placeholder="Package Title">
+        <input type="text" name="room" id="" placeholder="Room type (Quad Sharing etc.)">
+        <input type="number" name="duration" id="" placeholder="duration (no. of days for stay)">
+        <input type="number" name="price" id="" placeholder="Price in PKR">
+        <div class="btndiv">
+            <button type="submit" class="btn cardbtn">Add Package</button>
+            <a href="/admin" class="btn cardbtn trans">Cancel</a>
+        </div>
+    </form>
+</div>
+
+{% endblock main %}
+
+{% block js %}{% endblock js %}

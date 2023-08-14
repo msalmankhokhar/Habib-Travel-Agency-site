@@ -90,7 +90,7 @@ div.cardbtndiv{
     justify-content: center;
     row-gap: 10px;
 }
-a.btn.cardbtn{
+.btn.cardbtn{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,8 +98,10 @@ a.btn.cardbtn{
     border-radius: 0.5vw;
     padding: 0.9vw;
     padding: 18px;
+    /* color: white; */
 }
-a.cardbtn *{
+
+.cardbtn *{
     font-size: 1.2vw;
 }
 .pkgcard div.cardtext{
@@ -123,21 +125,21 @@ a.cardbtn *{
     width: 1.5vw;
     height: 1.5vw;
 }
-a.cardbtn svg{
+.cardbtn svg{
     width: 21px;
     height: 21px;
     width: 1.5vw;
     height: 1.5vw;
 }
-a.cardbtn.edit{}
+.cardbtn.edit{}
 
-a.cardbtn.del{
+.cardbtn.del{
     background-color: rgb(197, 0, 0);
     color: white;
     border: 2px solid rgb(197, 0, 0);
     cursor: pointer;
 }
-a.cardbtn.del:hover{
+.cardbtn.del:hover{
     background-color: red;
     border-color: red;
 }
