@@ -2,8 +2,8 @@
     padding: 0px;
     margin: 0px;
     font-family: 'Roboto', sans-serif;
-    font-family: 'Ysabeau SC', sans-serif;
-    font-family: 'Varela Round', sans-serif;
+    /* font-family: 'Ysabeau SC', sans-serif;
+    font-family: 'Varela Round', sans-serif; */
     /* box-sizing: border-box; */
 }
 
@@ -19,7 +19,7 @@
 
 body{
     /* background: linear-gradient(45deg, orange, blue); */
-    padding: 2vw;
+    /* padding: 2vw; */
     /* display: none; */
     /* background-image: url("https://source.unsplash.com/random?kabah,madina");
     background-color: #00000014;
@@ -60,24 +60,29 @@ div.abovenav{
     align-items: center;
     justify-content: space-between;
     /* background-color: orange; */
-    background: linear-gradient(45deg, orange, blue);
+    /* background: linear-gradient(45deg, orange, blue);
     background-color: #000000bd;
     background-blend-mode: darken;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    background-color: black;
+    background-color: #626262;
+    background-color: #502313;
     color: white;
-    padding: 9px 4vw;
+    padding: 14px 2vw;
+}
+nav{
+    padding: 3vh 3vw;
 }
 
 div.abovenav div.call{
     display: flex;
-    flex-direction: column;
-    row-gap: 5px;
+    column-gap: 8px;
 }
 
 div.abovenav div.call span{
-    font-size: 0.89rem;
+    /* font-size: 0.82rem; */
 }
 
 div.abovenav div.socialicons{
@@ -88,7 +93,7 @@ div.abovenav div.socialicons{
 nav{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     background-color: white;
     /* padding: 30px 0px; */
@@ -109,18 +114,29 @@ nav ul{
 }
 
 #navlogo{
-    width: 137px;
-    height: 12vh;
+    width: 138px;
+    height: 14vh;
 }
 
 .navlink, .logolink {
     text-decoration: none;
     color: #757575;
+    /* font-weight: bold; */
+}
+
+.logolink{
     font-weight: bold;
+    color: coral;
+    font-size: 2rem;
 }
 
 .navlink{
     font-size: 0.9rem;
+}
+
+.navlink:hover{
+    color: coral;
+    border-top: 2px solid coral;
 }
 
 .mainitem{
@@ -151,7 +167,7 @@ section.queryform{
     padding: 10vh 10vw;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     column-gap: 10vw;
     row-gap: 10vh;
@@ -159,6 +175,7 @@ section.queryform{
     background-image: url("https://source.unsplash.com/random?kabah,madina");
     background-color: #00000014;
     background-color: #0000007a;
+    background-color: #000000a1;
     background-blend-mode: darken;
     background-position: center;
     background-repeat: no-repeat;
@@ -167,6 +184,7 @@ section.queryform{
 
 section.queryform div.form{
     /* border: 2px solid #0016bd5c; */
+    border: 1px solid #a5a5a5;
     /* padding: 35px; */
     display: flex;
     flex-direction: column;
@@ -174,8 +192,8 @@ section.queryform div.form{
     border-radius: 10px;
     transition: box-shadow 0.5s;
     backdrop-filter: blur(8px);
-    background: linear-gradient(45deg, rgba(255, 166, 0, 0.74), rgba(0, 0, 255, 0.705));
-    background-color: #000000bd;
+    /* background: linear-gradient(45deg, rgba(255, 166, 0, 0.74), rgba(0, 0, 255, 0.705)); */
+    background-color: #00000062;
     background-blend-mode: darken;
     padding: 18px;
     
@@ -237,7 +255,7 @@ section.queryform div.form form .inputfield:focus{
     color: white;
     background-color: coral;
     border: none;
-    padding: 7px;
+    padding: 11px 15px ;
     border-radius: 4px;
     margin-top: 15px;
 
@@ -269,7 +287,7 @@ select{
 footer{
     display: flex;
     flex-direction: column;
-    background-color: var(--brown-light);
+    /* background-color: var(--brown-light); */
     background-color: black;
 
     /* background: linear-gradient(45deg, orange, blue);
@@ -289,11 +307,11 @@ footer{
 
 p.copyright{
     text-align: center;
-    background: linear-gradient(45deg, orange, blue);
-    background-color: #000000bd;
-    background-blend-mode: darken;
-    color: white;
+    /* background: linear-gradient(45deg, orange, blue); */
+    color: #999999;
+    border-top: 1px solid #424242;
     padding: 15px 0px;
+    font-size: 0.83rem;
 }
 
 p.address{
@@ -329,7 +347,7 @@ div.address.footerinnerdiv{
 div.footerlinkcontainer{
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 20px;
 }
 
 iframe.addressiframe{
@@ -399,21 +417,33 @@ section.packages.mainitem h1{
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    /* border: 1px solid #e1e1e1; */
-    box-shadow: 2px 2px 12px lightgray;
+    border: 1px solid lightgray;
+    /* box-shadow: 2px 2px 12px lightgray; */
     /* background: linear-gradient(45deg, orange, blue);
     background-color: #000000bd;
     background-blend-mode: darken; */
     background-color: white;
+    transition: 0.3s;
+}
+
+.pkgcard:hover{
+    box-shadow: 2px 2px 12px coral;
+    transform: scale(1.03);
 }
 
 .pkgcard div.cardimg{
     border-radius: inherit;
+    overflow: hidden;
 }
 
 .pkgcard div.cardimg img{
     width: 100%;
     border-radius: inherit;
+    transition: 0.5s;
+}
+.pkgcard div.cardimg img:hover{
+    /* opacity: 0.5; */
+    transform: scale(1.05);
 }
 
 .pkgcard div.cardtext{
@@ -434,7 +464,8 @@ section.packages.mainitem h1{
     justify-content: space-between;
     padding: 10px;
     border-radius: 7px;
-    box-shadow: 1px 1px 4px #c1c1c1;
+    border: 1px solid lightgray;
+    /* box-shadow: 1px 1px 4px #c1c1c1; */
     background-color: white;
 }
 
@@ -505,10 +536,10 @@ section.services{
     background-color: var(--brown-light);
     padding: 10vh 0px;
     background-color: black;
-    background: linear-gradient(45deg, orange, blue);
-    background-image: url("https://source.unsplash.com/random?kabah,madina");
-    background-color: #00000014;
-    background-color: #000000bd;
+    /* background: linear-gradient(45deg, orange, blue); */
+    /* background-image: url("https://source.unsplash.com/random?kabah,madina"); */
+    /* background-color: #00000014; */
+    /* background-color: #000000bd; */
     background-blend-mode: darken;
     background-position: center;
     background-repeat: no-repeat;
@@ -578,13 +609,14 @@ img.widthless.serviceimg{
 .header-text{
     color: white;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3rem;
     backdrop-filter: blur(1.09px);
     text-shadow: 3px 3px 12px black;
     text-align: center;
+    font-style: italic;
 
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Abril Fatface', cursive;
+    font-family: 'Dancing Script', cursive; */
     /* font-family: 'Pacifico', cursive;
     font-family: 'Roboto', sans-serif;
     font-family: 'Varela Round', sans-serif;
@@ -593,25 +625,32 @@ img.widthless.serviceimg{
 
 #header-text1{
     /* color: #00f0ff; */
+    text-align: left;
 }
 
 #header-text2{
     color: #fff235;
     color: #ffb15c;
+    color: #ff7846;
 }
 #header-text3{
     /* color: lime; */
+    /* text-align: right; */
+    /* color: green; */
 }
 
 .sectionheading{
     font-size: 2.2rem;
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Abril Fatface', cursive;
+    font-family: 'Dancing Script', cursive; */
     /* font-family: 'Pacifico', cursive;
     font-family: 'Roboto', sans-serif;
     font-family: 'Varela Round', sans-serif;
     font-family: 'Ysabeau SC', sans-serif; */
     color: coral;
+    color: #444444;
+    /* color: black; */
+    /* background-color: rgb(250, 132, 89); */
     /* background-color: rgb(227, 247, 113); */
     padding: 12px;
 }
@@ -639,7 +678,7 @@ img.widthless.serviceimg{
     font-family: 'Dancing Script', cursive;
     font-family: 'Pacifico', cursive;
     font-family: 'Roboto', sans-serif; */
-    font-family: 'Varela Round', sans-serif;
+    /* font-family: 'Varela Round', sans-serif; */
     /* font-family: 'Ysabeau SC', sans-serif; */
     color: #595959;
 }

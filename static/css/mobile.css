@@ -9,3 +9,6 @@ nav ul{
     row-gap: 15px;
     margin-bottom: 30px;
 }
+section.queryform{
+    justify-content: center;
+}
