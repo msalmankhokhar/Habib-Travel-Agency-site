@@ -1,33 +1,19 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Roboto', sans-serif;
-    /* font-family: 'Ysabeau SC', sans-serif;
-    font-family: 'Varela Round', sans-serif; */
-    /* box-sizing: border-box; */
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 :root{
     --brown-dark: #a35a00;
     --brown-light: cornsilk;
     --bax-shadow: 1px 1px 8px #bbbbbb;
-    /* --packagefeatureColor: #5073ff; */
     --packagefeatureColor: coral;
+    --packagefeatureColor: #4f4f4f;
     --pkgbtnColor: #008ba3;
     --pkgbtnColor: coral;
 }
 
-body{
-    /* background: linear-gradient(45deg, orange, blue); */
-    /* padding: 2vw; */
-    /* display: none; */
-    /* background-image: url("https://source.unsplash.com/random?kabah,madina");
-    background-color: #00000014;
-    background-color: #0000007a;
-    background-blend-mode: darken;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
 img.fullbg{
@@ -40,40 +26,18 @@ img.fullbg{
     z-index: -1;
 }
 
-{
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Dancing Script', cursive;
-    font-family: 'Pacifico', cursive;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Varela Round', sans-serif;
-    font-family: 'Ysabeau SC', sans-serif;
-}
-
 header{
     display: flex;
     flex-direction: column;
-    /* box-shadow: 1px 1px 8px #bbbbbb; */
 }
 
 div.abovenav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: orange; */
-    /* background: linear-gradient(45deg, orange, blue);
-    background-color: #000000bd;
-    background-blend-mode: darken;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
     background-color: black;
-    background-color: #626262;
-    background-color: #502313;
     color: white;
     padding: 14px 2vw;
-}
-nav{
-    padding: 3vh 3vw;
 }
 
 div.abovenav div.call{
@@ -81,9 +45,11 @@ div.abovenav div.call{
     column-gap: 8px;
 }
 
-div.abovenav div.call span{
-    /* font-size: 0.82rem; */
+nav{
+    padding: 3vh 3vw;
 }
+
+div.abovenav div.call span{}
 
 div.abovenav div.socialicons{
     display: flex;
@@ -96,9 +62,6 @@ nav{
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: white;
-    /* padding: 30px 0px; */
-    /* background-color: rgb(255, 238, 220); */
-    
 }
 
 div.logodiv{
@@ -126,7 +89,7 @@ nav ul{
 
 .logolink{
     font-weight: bold;
-    color: coral;
+    color: #515451;
     font-size: 2rem;
 }
 
@@ -141,6 +104,8 @@ nav ul{
 
 .mainitem{
     margin: 10vh auto;
+    padding: auto 5vw;
+    padding-inline: 5vw;
 }
 
 section.slider{
@@ -172,10 +137,11 @@ section.queryform{
     column-gap: 10vw;
     row-gap: 10vh;
     margin: 0px;
-    background-image: url("https://source.unsplash.com/random?kabah,madina");
+    /* background-image: url("https://source.unsplash.com/random?kabah,madina"); */
+    background-image: url('/static/img/h1.jpg');
     background-color: #00000014;
     background-color: #0000007a;
-    background-color: #000000a1;
+    background-color: #00000070;
     background-blend-mode: darken;
     background-position: center;
     background-repeat: no-repeat;
@@ -217,7 +183,8 @@ section.queryform div.form form{
     align-items: center;
     row-gap: 5px;
     column-gap: 10px;
-    width: 300px;
+    min-width: 177px;
+    max-width: 302px;
 }
 
 section.queryform div.text{
@@ -334,6 +301,9 @@ div.footerinnerdiv.quicklinks{
     display: flex;
     align-items: center;
     column-gap: 45px;
+    row-gap: 45px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 div.address.footerinnerdiv{
@@ -341,7 +311,7 @@ div.address.footerinnerdiv{
     flex-direction: column;
     align-items: center;
     row-gap: 10px;
-    width: 21vw;
+    /* width: 21vw; */
 }
 
 div.footerlinkcontainer{
@@ -409,7 +379,7 @@ section.packages.mainitem div.content{
 }
 
 section.packages.mainitem h1{
-    margin-bottom: 10vh;
+    /* margin-bottom: 10vh; */
 }
 
 .pkgcard{
@@ -522,10 +492,11 @@ a.btn{
     color: black;
 }
 
-.btn:hover{
+.btn.cardbtn.trans:hover{
     background-color: #686868;
+    background-color: coral;
     color: white;
-    border: 2px solid #686868;
+    border: 2px solid coral;
 }
 
 .tcenter{
@@ -593,9 +564,17 @@ section.services div.content div.servicecard a {
     font-family: 'Varela Round', sans-serif;
     text-decoration: none;
     color: white;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
+    background: none;
+    border: 1px solid white;
+    
+}
+
+section.services div.content div.servicecard a:hover{
     background-color: coral;
+    color: white;
+    border: 1px solid coral;
 }
 
 img.serviceimg{
@@ -631,7 +610,7 @@ img.widthless.serviceimg{
 #header-text2{
     color: #fff235;
     color: #ffb15c;
-    color: #ff7846;
+    color: #f7f7f7;
 }
 #header-text3{
     /* color: lime; */
@@ -642,17 +621,27 @@ img.widthless.serviceimg{
 .sectionheading{
     font-size: 2.2rem;
     /* font-family: 'Abril Fatface', cursive;
-    font-family: 'Dancing Script', cursive; */
-    /* font-family: 'Pacifico', cursive;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Pacifico', cursive;
     font-family: 'Roboto', sans-serif;
     font-family: 'Varela Round', sans-serif;
     font-family: 'Ysabeau SC', sans-serif; */
+    /* font-family: 'Playfair Display', serif; */
     color: coral;
     color: #444444;
     /* color: black; */
     /* background-color: rgb(250, 132, 89); */
     /* background-color: rgb(227, 247, 113); */
     padding: 12px;
+    margin-bottom: 0vh;
+    /* font-style: italic; */
+}
+.sectionheadingdiv{
+    margin-bottom: 5vh;
+    text-align: center;
+}
+.sectionp{
+    color: #000000a1;
 }
 
 .cardheading1, .cardheading{
@@ -665,6 +654,7 @@ img.widthless.serviceimg{
     /* color: coral; */
     /* color: #595959; */
     color: #205f99;
+    color: #4f4f4f;
 }
 
 .cardtext.cardheading{
@@ -682,3 +672,40 @@ img.widthless.serviceimg{
     /* font-family: 'Ysabeau SC', sans-serif; */
     color: #595959;
 }
+
+#services {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6fffe;
+    padding-top: 12vh;
+    padding-bottom: 12vh;
+  }
+  #services .content{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    width: 341px;
+    margin: 10px;
+    text-align: left;
+    /* height: 60vh; */
+    /* justify-content: space-evenly; */
+  }
+  
+  .service-card img {
+    height: 36vh;
+    width: 100%;
+  }
+  .servicep{
+    color: #000000bf;
+  }
+  

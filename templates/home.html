@@ -11,11 +11,17 @@
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script&family=Pacifico&family=Roboto&family=Varela+Round&family=Ysabeau+SC&display=swap"
         rel="stylesheet">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" media="screen and (max-width: 1000px)" href="static/css/mobile.css">
     <link rel="shortcut icon" href="static/img/alhay tarvels/favicon.ico" type="image/x-icon">
 </head>
+<style>
 
+section.queryform{
+    background-image: url('/static/img/coverpics/{{coverimage_filename}}');
+}    
+</style>
 <body>
     <!-- <img class="fullbg" src="https://source.unsplash.com/random?kabah,madina" alt=""> -->
     <header>
@@ -73,7 +79,7 @@
             <img class="slide" src="img/night.jpg" alt="">
         </section> -->
         <section class="queryform mainitem">
-            <div class="text">
+            <div class="text" data-aos="fade-right" data-aos-duration="{{animation_duration}}">
                 <p class="header-text" id="header-text1">Leading</p>
                 <p class="header-text" id="header-text2">Hajj & Umrah Agency</p>
                 <p class="header-text" id="header-text3">in Pakistan</p>
@@ -106,12 +112,15 @@
             </div>
         </section>
         <section class="packages mainitem">
-            <h1 class="tcenter sectionheading">Special Umrah Packages</h1>
+            <div class="sectionheadingdiv">
+                <h2 class="sectionheading">Special Umrah Packages</h2>
+                <p class="sectionp">Select a package of your choice and contact us now on the phone number provided above</p>
+            </div>
             <div class="content">
 
                 {% for package in  packageList %}
                 
-                <div class="pkgcard">
+                <div class="pkgcard" data-aos="flip-left" data-aos-duration="{{animation_duration}}">
                     <div class="cardimg">
                         <img src="static/img/packages/ryan-pradipta-putra-MWJ7JpFBlGk-unsplash.jpg" alt="">
                     </div>
@@ -149,7 +158,7 @@
                                 <p class="cardp cardtext">Rs. {{package.price}}</p>
                             </div>
                         </div>
-                        <a href="" class="btn cardbtn">View Details</a>
+                        <a href="" class="btn cardbtn trans">View Details</a>
                     </div>
                 </div>
 
@@ -157,8 +166,37 @@
 
             </div>
         </section>
+
+        <section id="services" class="mainitem">
+            <div class="sectionheadingdiv">
+                <h2 class="sectionheading">Our Services</h2>
+                <p class="sectionp">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, rerum.</p>
+            </div>
+            
+            <div class="content">
+                <div class="service-card" data-aos="zoom-in"  data-aos-duration="{{animation_duration}}">
+                    <!-- <img src="https://source.unsplash.com/random?kabah,madina" alt="Umrah Services"> -->
+                    <img src="https://images.unsplash.com/photo-1589827577276-65d717348780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Umrah Services">
+                    <h3 class="">Umrah Services</h3>
+                    <p class="servicep">We offer a variety of Umrah packages to suit your needs and budget.</p>
+                  </div>
+                  <div class="service-card" data-aos="zoom-in"  data-aos-duration="{{animation_duration}}">
+                    <!-- <img src="https://source.unsplash.com/random?kabah,madina" alt="Visa Provision"> -->
+                    <img src="https://images.unsplash.com/photo-1454496406107-dc34337da8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Visa Provision">
+                    <h3 class="">Visa Provision</h3>
+                    <p class="servicep">We can help you obtain the necessary visas for your pilgrimage.</p>
+                  </div>
+                  <div class="service-card" data-aos="zoom-in" data-aos-duration="{{animation_duration}}">
+                    <!-- <img src="https://source.unsplash.com/random?kabah,madina" alt="Accommodation"> -->
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Accommodation">
+                    <h3 class="">Accommodation</h3>
+                    <p class="servicep">We provide comfortable and affordable accommodation options in Makkah and Madinah.</p>
+                  </div>
+            </div>
+          </section>
+          
         
-        <section class="mainitem services">
+        <!-- <section class="mainitem services">
             <h1 class="tcenter sectionheading servicesheading">Our Services</h1>
             <div class="content">
                 <div class="servicecard">
@@ -177,7 +215,8 @@
                     <a href="">View Details</a>
                 </div>
             </div>
-        </section>
+        </section> -->
+
     </main>
 
     <footer>
@@ -250,7 +289,10 @@
     </footer>
 
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
 <script src="static/js/script.js"></script>
-
+<script>
+    AOS.init();
+  </script>
 </html>

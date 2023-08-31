@@ -1,9 +1,13 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_sqlalchemy import SQLAlchemy
+import os
+import random
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 database = SQLAlchemy(app=app)
+
+imageslist = os.listdir('static\img\coverpics')
 
 class Packages(database.Model):
     title = database.Column(database.Text, unique=True, nullable=False)
@@ -17,8 +21,9 @@ with app.app_context():
 
 @app.route('/')
 def home():
+    random_image = random.choice(imageslist)
     packageList = Packages.query.all()
-    return render_template('home.html', packageList=packageList)
+    return render_template('home.html', packageList=packageList, coverimage_filename=random_image, animation_duration=1000)
 
 @app.route('/admin')
 def admin():
