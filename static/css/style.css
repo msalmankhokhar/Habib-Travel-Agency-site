@@ -1,5 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Open+Sans&family=Roboto&display=swap');
 
+/* 
+
+Fonts:
+
+font-family: 'Montserrat', sans-serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+
+*/
 :root{
     --brown-dark: #a35a00;
     --brown-light: cornsilk;
@@ -10,10 +20,34 @@
     --pkgbtnColor: coral;
 }
 
+/* Whatsapp Button */
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+	box-shadow: 2px 2px 10px #303030;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
 *{
     padding: 0px;
     margin: 0px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
 }
 
 img.fullbg{
@@ -29,6 +63,7 @@ img.fullbg{
 header{
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 div.abovenav{
@@ -46,7 +81,8 @@ div.abovenav div.call{
 }
 
 nav{
-    padding: 3vh 3vw;
+    /* padding: 3vh 3vw; */
+    padding: 3vh 0vw;
 }
 
 div.abovenav div.call span{}
@@ -59,7 +95,7 @@ div.abovenav div.socialicons{
 nav{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     background-color: white;
 }
@@ -98,133 +134,177 @@ nav ul{
 }
 
 .navlink:hover{
-    color: coral;
-    border-top: 2px solid coral;
+    color: green;
+    border-top: 3px solid green;
 }
 
-.mainitem{
-    margin: 10vh auto;
-    padding: auto 5vw;
-    padding-inline: 5vw;
-}
-
-section.slider{
-    width: 60%;
-    width: 60vw;
-    height: 35vw;
-    margin: 10vh auto;
-    position: relative;
-    overflow: hidden;
-    border-radius: 25px;
-    box-shadow: 1px 1px 16px var(--brown-dark);
-}
-
-.slide{
-    width: 100%;
+#headertextWrapper{
     height: 100%;
-    position: absolute;
-    transition: 1s;
-}
-
-section.queryform{
-    /* height: 40vw; */
-    /* width: 100vw; */
-    padding: 10vh 10vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-color: rgba(0, 0, 0, 0.568); */
+    backdrop-filter: blur(5px);
+    background-blend-mode: darken;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    column-gap: 10vw;
-    row-gap: 10vh;
-    margin: 0px;
-    /* background-image: url("https://source.unsplash.com/random?kabah,madina"); */
-    background-image: url('/static/img/h1.jpg');
-    background-color: #00000014;
-    background-color: #0000007a;
-    background-color: #00000070;
-    background-blend-mode: darken;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding: 0px 5vw;
+    /* background-color: black; */
 }
 
-section.queryform div.form{
-    /* border: 2px solid #0016bd5c; */
-    border: 1px solid #a5a5a5;
-    /* padding: 35px; */
+#headertextWrapper .textcontainer{
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
-    border-radius: 10px;
-    transition: box-shadow 0.5s;
-    backdrop-filter: blur(8px);
-    /* background: linear-gradient(45deg, rgba(255, 166, 0, 0.74), rgba(0, 0, 255, 0.705)); */
-    background-color: #00000062;
+    row-gap: 20px;
+    width: 50%;
+}
+#headertextWrapper .textcontainer .btnWrapper{
+    display: inherit;
+    column-gap: 5px;
+}
+#headertextWrapper .textcontainer .headings{
+    display: flex;
+    flex-direction: column;
+}
+#headertextWrapper .textcontainer p{
+    color: #343434;
+}
+.headerText-span{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+#headertextWrapper img{
+    width: 445px;
+    height: 378px;
+}
+#header-text2{
+    font-size: 1.7rem;
+}
+#header-text3{
+    color: #0a400a;
+}
+#header-text1{
+    font-size: 2.2rem;
+    color: gray;
+}
+
+
+.mainitem{
+    padding: 7vh 5vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 7vh;
+}
+
+#queryFormSection{
+    /* background-color: #011c01; */
+    background: url(/static/img/coverpics/h2.jpg);
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 128, 0), transparent);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.479);
+    background-color: rgb(0 138 191 / 85%);
+    background-color: rgb(0 0 0 / 61%);
+    background-color: green;
+    background-color: #005000ec;
+    background-color: rgba(0, 0, 0, 0.733);
     background-blend-mode: darken;
-    padding: 18px;
+}
+
+#queryFormSection .formWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+#queryFormSection .formWrapper:hover{
+}
+
+#queryFormSection .formWrapper img{
+    width: 460px;
+}
+
+#queryFormSection .sectionheading{
+    text-align: center;
+    padding: 0px;
+    color: white;
+}
+
+#queryForm{
+    display: flex;
+    flex-direction: column;
+    padding: 25px 25px;
+    border-radius: 10px;
+    background-color: rgb(229 229 229);
+    background-color: rgb(11 30 12);
+    background-color: rgb(0 0 0 / 61%);
+    background-color: #004802e6;
+    background-color: #0048027a;
+    backdrop-filter: blur(8px);
     
 }
 
-section.queryform div.form:hover{
-    box-shadow: 2px 2px 15px var(--brown-dark);
-}
-
-section.queryform div.form h1{
-    text-align: center;
-    font-size: 1.7rem;
-    color: rgb(250, 112, 69);
-    font-family: 'Dancing Script', cursive;
-}
-
-section.queryform div.form form{
+#queryForm .inputfieldWrapper{
+    min-width: 25vw;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    padding: 16px;
     display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    row-gap: 5px;
-    column-gap: 10px;
-    min-width: 177px;
-    max-width: 302px;
+    column-gap: 20px;
 }
 
-section.queryform div.text{
-
+#queryForm .inputfieldWrapper svg{
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
-section.queryform div.form form div.input{
-    /* padding: 12px; */
-}
-
-section.queryform div.form form div label{
-    font-size: 0.9rem;
+#queryForm .inputfieldWrapper svg path{
     color: white;
 }
 
-section.queryform div.form form .inputfield{
-    padding: 12px;
-    /* border-bottom: 2px solid #00000026; */
+#queryForm .inputfieldWrapper .inputfield{
+    outline: none;
+    border: none;
     background: none;
     color: white;
-    border-bottom: 1px solid white;
-    /* border-radius: 5px; */
-    width: 90%;
+    font-size: 0.9rem;
 }
 
-section.queryform div.form form .inputfield::placeholder{
-    color: rgba(255, 255, 255, 0.836);
+#queryForm .inputfieldWrapper .inputfield::placeholder{
+    color: rgb(219, 219, 219);
 }
 
-section.queryform div.form form .inputfield:focus{
-    border-bottom:  1px solid rgb(250, 112, 69);;
+#queryForm .inputfieldWrapper .inputfield:focus{
+    /* border-bottom: 3px solid rgb(8, 94, 8); */
+}
+
+#queryForm button[type="submit"]{
+    align-self: center;
+    margin-top: 22px;
+}
+
+#queryFormSection div.form form div.input{
+    
+}
+
+#queryFormSection div.form form div label{
+    
+}
+
+#queryFormSection div.form form .inputfield{
+
+}
+
+#queryFormSection div.form form .inputfield::placeholder{
+
+}
+
+#queryFormSection div.form form .inputfield:focus{
 }
 
 .queryformbtn{
-    color: white;
-    background-color: coral;
-    border: none;
-    padding: 11px 15px ;
-    border-radius: 4px;
-    margin-top: 15px;
+    
 
 }
 
@@ -238,17 +318,7 @@ h1.customfont{
 }
 
 .inputfield{
-    outline: none;
-    border: none;
-}
-
-select{
-    background-color: #2532db;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
+    
 }
 
 footer{
@@ -351,10 +421,6 @@ div.cps.footerinnerdiv div.cpsinnerdiv img{
     width: 70px;
 }
 
-.h40{
-    height: 35px;
-}
-
 div.cps.footerinnerdiv div.cpsinnerdiv.s svg{
     width: 25px;
     height: 25px;
@@ -372,94 +438,131 @@ section.packages.mainitem{
 section.packages.mainitem div.content{
     padding: 0px 3vw;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 330px);
+    /* grid-template-columns: repeat(auto-fit, 330px); */
+    grid-template-columns: auto auto auto;
     /* grid-auto-flow: row; */
     justify-content: center;
-    gap: 5vw;
+    column-gap: 2vw;
+    row-gap: 5vh;
 }
 
 section.packages.mainitem h1{
     /* margin-bottom: 10vh; */
 }
 
-.pkgcard{
-    width: 330px;
-    border-radius: 15px;
+.myPkgCard{
     display: flex;
     flex-direction: column;
-    border: 1px solid lightgray;
-    /* box-shadow: 2px 2px 12px lightgray; */
-    /* background: linear-gradient(45deg, orange, blue);
-    background-color: #000000bd;
-    background-blend-mode: darken; */
-    background-color: white;
-    transition: 0.3s;
+    /* width: 30vw; */
+    width: 347px;
+    /* transform: scale(0.5); */
+    box-shadow: 1px 1px 8px #bbbbbb;
+    border-radius: 22px;
+    padding: 20px;
 }
-
-.pkgcard:hover{
-    box-shadow: 2px 2px 12px coral;
-    transform: scale(1.03);
-}
-
-.pkgcard div.cardimg{
+.pkgCardImgWrapper{
+    width: 100%;
+    margin-bottom: 10px;
+    margin-bottom: 2%;
     border-radius: inherit;
     overflow: hidden;
 }
-
-.pkgcard div.cardimg img{
+.pkgCardImg{
     width: 100%;
     border-radius: inherit;
-    transition: 0.5s;
 }
-.pkgcard div.cardimg img:hover{
-    /* opacity: 0.5; */
-    transform: scale(1.05);
+.myPkgCardText *{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
 }
-
-.pkgcard div.cardtext{
-    padding: 15px 10px;
+.myPkgCardText{
     display: flex;
     flex-direction: column;
     row-gap: 25px;
+    row-gap: 15px;
 }
+.myPkgCardText .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.myPkgCardText .top .duration, .myPkgCardText .top .price{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.myPkgCardText .top .duration{
+    color: #747474;
+    /* color: #226187; */
+}
+.myPkgCardText .top .duration .content{
+}
+.myPkgCardText .top .duration .days{
+    /* font-size: 1.2rem; */
+}
+.myPkgCardText .top .price{
+    color: #818181;
+    color: #2e2e2e;
+}
+.myPkgCardText .top .price span{
 
-.pkgcard div.cardtext div.desc{
+}
+.myPkgCardText .title{
+    font-size: 1.5rem;
+    text-align: center;
+    /* margin-bottom: 5px; */
+    color: white;
+    background-color: green;
+    padding: 8px 5px;
+    border-radius: 7px;
+}
+.myPkgCardText .title svg{
+    width: 25px;
+    height: 25px;
+}
+.myPkgCardText .title svg path{
+    color: gold;
+}
+.myPkgCardText .hotelContainer{
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    padding: 0px 5%;
+}
+.myPkgCardText .hotelContainer .hotel{
+}
+.myPkgCardText .hotelContainer .hotel .hotelTitle{
+    color: #003c00;
+    color: #007487;
+    margin-bottom: 3px;
+    font-size: 1.3rem;
+}
+.myPkgCardText .hotelContainer .hotel .hotelTitle span{
+    font-size: 0.9rem;
+}
+.myPkgCardText .hotelContainer .hotel .hotelDuration{
+    font-weight: bold;
+    color: #606060;
+    font-size: 0.9rem;
+    text-align: right;
 }
 
-.pkgcard div.cardtext div.desc div.feature{
+.myPkgCardText .featureContainer{
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 7px;
-    border: 1px solid lightgray;
-    /* box-shadow: 1px 1px 4px #c1c1c1; */
-    background-color: white;
+    justify-content: space-around;
 }
-
-.pkgcard div.cardtext div.desc div.feature div.featureheading{
+.myPkgCardText .featureContainer .feature{
     display: flex;
-    column-gap: 7px;
     align-items: center;
+    column-gap: 5px;
 }
-
-p.cardp{
+.myPkgCardText .featureContainer .feature span{
+    font-weight: bold;
+    color: #545454;
 }
-
-.pkgcard div.cardtext div.desc div.feature svg{
-    width: 20px;
-    height: 20px;
-}
-
-.pkgcard div.cardtext div.desc div.feature svg *{
-    color: var(--packagefeatureColor);
-    /* color: #3681b1; */
-}
-
-.cardheading, .cardp{
-    /* color: var(--brown-dark); */
+.myPkgCardText .featureContainer .feature svg path{
+    color: green;
 }
 
 a.btn{
@@ -479,17 +582,21 @@ a.btn{
     
     padding: 10px;
     border-radius: 5px;
-    border: 2px solid coral;
+    border: 2px solid green;
     text-align: center;
     font-weight: bold;
     color: white;
-    background-color: coral;
+    background-color: green;
 }
 .btn.trans{
     border: 2px solid #686868;
     background: none;
     color: #686868;
     color: black;
+}
+.btn.trans:hover{
+    color: white;
+    background-color: #686868;
 }
 
 .btn.cardbtn.trans:hover{
@@ -501,121 +608,6 @@ a.btn{
 
 .tcenter{
     text-align: center;
-}
-
-section.services{
-    background-color: var(--brown-light);
-    padding: 10vh 0px;
-    background-color: black;
-    /* background: linear-gradient(45deg, orange, blue); */
-    /* background-image: url("https://source.unsplash.com/random?kabah,madina"); */
-    /* background-color: #00000014; */
-    /* background-color: #000000bd; */
-    background-blend-mode: darken;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-section.services h1{
-    margin-bottom: 7vh;
-    background: none;
-    color: white;
-    text-shadow: 2px 2px 16px black;
-    /* backdrop-filter: blur(8px); */
-}
-
-section.services div.content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin: 10vw; */
-    column-gap: 1vw;
-    row-gap: 3vh;
-    flex-wrap: wrap;
-}
-
-section.services div.content div.servicecard{
-    background-color: #ffffff82;
-    background-color: #bdbdbd4f;
-    height: 200px;
-    height: 240px;
-    width: 200px;
-    padding: 45px;
-    border-radius: 10px;
-    backdrop-filter: blur(8px);
-    /* border: 2px solid white; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-section.services div.content div.servicecard h2{
-    font-size: 1.25rem;
-    font-weight: normal;
-    line-height: 3rem;
-    color: white;
-    font-family: 'Varela Round', sans-serif;
-}
-
-section.services div.content div.servicecard a {
-    font-size: 0.86rem;
-    font-family: 'Varela Round', sans-serif;
-    text-decoration: none;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    background: none;
-    border: 1px solid white;
-    
-}
-
-section.services div.content div.servicecard a:hover{
-    background-color: coral;
-    color: white;
-    border: 1px solid coral;
-}
-
-img.serviceimg{
-    width: 60%;
-}
-
-img.widthless.serviceimg{
-    width: 50%;
-}
-
-.header-text{
-    color: white;
-    font-weight: bold;
-    font-size: 3rem;
-    backdrop-filter: blur(1.09px);
-    text-shadow: 3px 3px 12px black;
-    text-align: center;
-    font-style: italic;
-
-    /* font-family: 'Abril Fatface', cursive;
-    font-family: 'Dancing Script', cursive; */
-    /* font-family: 'Pacifico', cursive;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Varela Round', sans-serif;
-    font-family: 'Ysabeau SC', sans-serif; */
-}
-
-#header-text1{
-    /* color: #00f0ff; */
-    text-align: left;
-}
-
-#header-text2{
-    color: #fff235;
-    color: #ffb15c;
-    color: #f7f7f7;
-}
-#header-text3{
-    /* color: lime; */
-    /* text-align: right; */
-    /* color: green; */
 }
 
 .sectionheading{
@@ -644,68 +636,66 @@ img.widthless.serviceimg{
     color: #000000a1;
 }
 
-.cardheading1, .cardheading{
-
+#servicesSection *{
+    /* color: white; */
 }
 
-.cardtext.cardheading1{
-    /* font-family: 'Abril Fatface', cursive; */
-    /* font-weight: normal; */
-    /* color: coral; */
-    /* color: #595959; */
-    color: #205f99;
-    color: #4f4f4f;
+#servicesSection{
+    /* background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 128, 0), transparent); */
+    /* background: url(/static/img/formbg.jpg); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.733);
+    background-color: rgb(0 0 0 / 70%);
+    background-color: rgb(243 243 243 / 70%);
+    background-blend-mode: darken;
 }
 
-.cardtext.cardheading{
-    color: var(--packagefeatureColor);
-    /* color: #3681b1; */
+#servicesSection .sectionheading{
+    /* color: white; */
+}
+
+#servicesSection .contentWrapper{
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+}
+#servicesSection .contentWrapper .serviceCard{
+    background-color: #008000b3;
+    background-color: #007400;
+    width: 214px;
+    border-radius: 5px;
+    display: flex;
+    padding: 30px;
+    row-gap: 30px;
+    flex-direction: column;
+}
+#servicesSection .contentWrapper .serviceCard i{
+    align-self: center;
+    font-size: 85px;
+    color: white;
+}
+#servicesSection .contentWrapper .serviceCard .cardText{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.serviceCardHeading{
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
     font-weight: normal;
 }
-
-.cardtext{
-    /* font-family: 'Abril Fatface', cursive;
-    font-family: 'Dancing Script', cursive;
-    font-family: 'Pacifico', cursive;
-    font-family: 'Roboto', sans-serif; */
-    /* font-family: 'Varela Round', sans-serif; */
-    /* font-family: 'Ysabeau SC', sans-serif; */
-    color: #595959;
+.serviceCardDesc{
+    color: rgb(216, 216, 216);
+    font-size: 0.95rem;
 }
-
-#services {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f6fffe;
-    padding-top: 12vh;
-    padding-bottom: 12vh;
-  }
-  #services .content{
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    row-gap: 12px;
-    width: 341px;
-    margin: 10px;
-    text-align: left;
-    /* height: 60vh; */
-    /* justify-content: space-evenly; */
-  }
-  
-  .service-card img {
-    height: 36vh;
-    width: 100%;
-  }
-  .servicep{
-    color: #000000bf;
-  }
-  
+.btn.serviceCardBtn{
+    border-color: transparent;
+    color: white;
+    background-color: black;
+}
+.btn.serviceCardBtn:hover{
+    background-color: rgb(4 14 0);
+}

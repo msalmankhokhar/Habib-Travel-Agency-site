@@ -26,23 +26,23 @@ function slidePrev(slideNow) {
     });
 }
 
-document.body.onload = function playSlides() {
-    setInterval(() => {
-        if (slide_No_as_arg < no_of_slides && mode_forward == true){
-            slideNext(slide_No_as_arg);
-            console.log(slide_No_as_arg);
-            slide_No_as_arg++;
-            if (slide_No_as_arg == no_of_slides){
-                mode_forward = false;
-            }
-        }       
-        else if (mode_forward == false){
-            slide_No_as_arg--;
-            slideNext(slide_No_as_arg);
-            console.log(slide_No_as_arg);
-            if (slide_No_as_arg == 0){
-                mode_forward = true;
-            }
-        }       
-    }, 3000);
-}
+// document.body.onload = function playSlides() {
+//     setInterval(() => {
+//         if (slide_No_as_arg < no_of_slides && mode_forward == true){
+//             slideNext(slide_No_as_arg);
+//             console.log(slide_No_as_arg);
+//             slide_No_as_arg++;
+//             if (slide_No_as_arg == no_of_slides){
+//                 mode_forward = false;
+//             }
+//         }       
+//         else if (mode_forward == false){
+//             slide_No_as_arg--;
+//             slideNext(slide_No_as_arg);
+//             console.log(slide_No_as_arg);
+//             if (slide_No_as_arg == 0){
+//                 mode_forward = true;
+//             }
+//         }       
+//     }, 3000);
+// }

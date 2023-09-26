@@ -49,9 +49,12 @@
 <h1>Edit Package</h1>
     <form action="" method="post">
         <input type="text" name="title" id="" placeholder="Package Title" value="{{pkg.title}}">
-        <input type="text" name="room" id="" placeholder="Room type (Quad Sharing etc.)" value="{{pkg.room}}">
-        <input type="number" name="duration" id="" placeholder="duration (no. of days for stay)" value="{{pkg.duration}}">
-        <input type="number" name="price" id="" placeholder="Price in PKR" value="{{pkg.price}}">
+        <input type="text" name="makkahHotel" id="" placeholder="Makkah Hotel" value="{{pkg.makkahHotel}}">
+        <input type="text" name="madinaHotel" id="" placeholder="Madinah Hotel" value="{{pkg.madinaHotel}}">
+        <input type="number" name="duration" id="" placeholder="Total duration of stay(No. of Days)" value="{{pkg.duration}}">
+        <input type="number" name="makkahDuration" id="" placeholder="Duration of stay in Makkah(No. of Days)" value="{{pkg.makkahDuration}}">
+        <input type="number" name="madinaDuration" id="" placeholder="Duration of stay in Madinah(No. of Days)" value="{{pkg.madinaDuration}}">
+        <input type="number" name="price" id="" placeholder="Price in Pounds" value="{{pkg.price}}">
         <div class="btndiv">
             <button type="submit" class="btn cardbtn">Save Changes</button>
             <a href="/admin" class="btn cardbtn trans">Cancel</a>

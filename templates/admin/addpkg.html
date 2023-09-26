@@ -49,9 +49,12 @@
 <h1>Add New Package</h1>
     <form action="/admin/add-new-package" method="post">
         <input type="text" name="title" id="" placeholder="Package Title">
-        <input type="text" name="room" id="" placeholder="Room type (Quad Sharing etc.)">
-        <input type="number" name="duration" id="" placeholder="duration (no. of days for stay)">
-        <input type="number" name="price" id="" placeholder="Price in PKR">
+        <input type="text" name="makkahHotel" id="" placeholder="Makkah Hotel">
+        <input type="text" name="madinaHotel" id="" placeholder="Madinah Hotel">
+        <input type="number" name="duration" id="" placeholder="Total duration of stay(No. of Days)">
+        <input type="number" name="makkahDuration" id="" placeholder="Duration of stay in Makkah(No. of Days)">
+        <input type="number" name="madinaDuration" id="" placeholder="Duration of stay in Madinah(No. of Days)">
+        <input type="number" name="price" id="" placeholder="Price in Pounds">
         <div class="btndiv">
             <button type="submit" class="btn cardbtn">Add Package</button>
             <a href="/admin" class="btn cardbtn trans">Cancel</a>
