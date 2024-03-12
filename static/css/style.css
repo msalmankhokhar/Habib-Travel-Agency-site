@@ -352,8 +352,9 @@ p.copyright{
 }
 
 p.address{
-    /* color: var(--brown-dark); */
+    color: rgba(0, 0, 0, 0.42);
     text-align: left;
+    font-size: 1.6rem;
 }
 
 footer div.content{
@@ -376,12 +377,12 @@ div.footerinnerdiv.quicklinks{
     flex-wrap: wrap;
 }
 
-div.address.footerinnerdiv{
+div.address{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 10px;
-    /* width: 21vw; */
+    flex-direction: row;
+    column-gap: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 div.footerlinkcontainer{
@@ -391,11 +392,8 @@ div.footerlinkcontainer{
 }
 
 iframe.addressiframe{
-    height: 270px;
-    width: 270px;
-    height: 200px;
-    width: 100%;
-    border-radius: px;
+    height: 500px;
+    min-width: 50%;
 }
 
 .footertext{
@@ -433,17 +431,19 @@ div.cps.footerinnerdiv div.cpsinnerdiv.s{
 
 section.packages.mainitem{
     background-color: white;
+    /* padding: 7vh 0vw; */
 }
 
 section.packages.mainitem div.content{
-    padding: 0px 3vw;
-    display: grid;
+    padding: 0px 0vw;
+    display: flex;
     /* grid-template-columns: repeat(auto-fit, 330px); */
-    grid-template-columns: auto auto auto;
+    /* grid-template-columns: auto auto auto; */
     /* grid-auto-flow: row; */
     justify-content: center;
     column-gap: 2vw;
     row-gap: 5vh;
+    flex-wrap: wrap;
 }
 
 section.packages.mainitem h1{
@@ -668,8 +668,9 @@ a.btn{
     border-radius: 5px;
     display: flex;
     padding: 30px;
-    row-gap: 30px;
+    row-gap: 41px;
     flex-direction: column;
+    box-shadow: 1px 1px 8px #595959;
 }
 #servicesSection .contentWrapper .serviceCard i{
     align-self: center;
@@ -682,10 +683,10 @@ a.btn{
     row-gap: 15px;
 }
 .serviceCardHeading{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: white;
     text-align: center;
-    font-weight: normal;
+    font-weight: bold;
 }
 .serviceCardDesc{
     color: rgb(216, 216, 216);
@@ -698,4 +699,10 @@ a.btn{
 }
 .btn.serviceCardBtn:hover{
     background-color: rgb(4 14 0);
+}
+
+@media only screen and (max-width: 600px) {
+    section.packages.mainitem div.content{
+
+    }
 }
