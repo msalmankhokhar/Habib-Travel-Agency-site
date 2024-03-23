@@ -11,8 +11,6 @@ cors = CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 database = SQLAlchemy(app=app)
 
-# imageslist = os.listdir(os.path.join('static', 'img', 'coverpics'))
-
 class Packages(database.Model):    
     title = database.Column(database.String, unique=True, nullable=False)
     slug = database.Column(database.String, primary_key=True)
