@@ -44,7 +44,7 @@ def api_pkgs():
             'price' : pkg.price
         } 
         for pkg in Packages.query.all() ]
-    return packageList
+    return jsonify(packageList)
 
 @app.route('/card')
 def card():
