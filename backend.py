@@ -11,7 +11,7 @@ cors = CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 database = SQLAlchemy(app=app)
 
-imageslist = os.listdir('static\img\coverpics')
+# imageslist = os.listdir(os.path.join('static', 'img', 'coverpics'))
 
 class Packages(database.Model):    
     title = database.Column(database.String, unique=True, nullable=False)
@@ -26,11 +26,11 @@ class Packages(database.Model):
 with app.app_context():
     database.create_all()
 
-@app.route('/')
-def home():
-    random_image = random.choice(imageslist)
-    packageList = Packages.query.all()
-    return render_template('home.html', packageList=packageList, coverimage_filename=random_image, animation_duration=1000)
+# @app.route('/')
+# def home():
+#     random_image = random.choice(imageslist)
+#     packageList = Packages.query.all()
+#     return render_template('home.html', packageList=packageList, coverimage_filename=random_image, animation_duration=1000)
 
 @app.route('/api/pkgs')
 def api_pkgs():
