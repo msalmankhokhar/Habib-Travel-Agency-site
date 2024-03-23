@@ -46,7 +46,7 @@ def api_pkgs():
             'price' : pkg.price
         } 
         packageList.append(obj)
-    return {"list" : len(pkgListFromDB)}
+    return {"list" : packageList}
 
 @app.route('/card')
 def card():
