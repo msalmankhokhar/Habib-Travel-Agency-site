@@ -8,7 +8,7 @@ import time
 
 app = Flask(__name__)
 cors = CORS(app)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.sqlite"
 database = SQLAlchemy(app=app)
 
 class Packages(database.Model):    
