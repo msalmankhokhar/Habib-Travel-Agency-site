@@ -32,8 +32,9 @@ with app.app_context():
 
 @app.route('/api/pkgs')
 def api_pkgs():
-    packageList = [ 
-        {
+    packageList = []
+    for pkg in Packages.query.all():
+        obj = {
             'title' : pkg.title,
             'slug' : pkg.slug,
             'makkahHotel' : pkg.makkahHotel, 
@@ -43,7 +44,7 @@ def api_pkgs():
             'duration' : pkg.duration,
             'price' : pkg.price
         } 
-        for pkg in Packages.query.all() ]
+        packageList.append(obj)
     return {"list" : packageList}
 
 @app.route('/card')
