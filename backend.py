@@ -1,18 +1,21 @@
-from flask import Flask, render_template, redirect, url_for, flash, request
+from flask import Flask, render_template, redirect, url_for, flash, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import os
 import random
+import json
+from flask_cors import CORS
+import time
 
 app = Flask(__name__)
+cors = CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 database = SQLAlchemy(app=app)
 
 imageslist = os.listdir('static\img\coverpics')
 
-class Packages(database.Model):
+class Packages(database.Model):    
     title = database.Column(database.String, unique=True, nullable=False)
     slug = database.Column(database.String, primary_key=True)
-    # room = database.Column(database.String, nullable=True)
     makkahHotel = database.Column(database.String, nullable=True)
     madinaHotel = database.Column(database.String, nullable=True)
     makkahDuration = database.Column(database.Integer, nullable=True)
@@ -28,6 +31,22 @@ def home():
     random_image = random.choice(imageslist)
     packageList = Packages.query.all()
     return render_template('home.html', packageList=packageList, coverimage_filename=random_image, animation_duration=1000)
+
+@app.route('/api/pkgs')
+def api_pkgs():
+    packageList = [ 
+        {
+            'title' : pkg.title,
+            'slug' : pkg.slug,
+            'makkahHotel' : pkg.makkahHotel, 
+            'madinaHotel' : pkg.madinaHotel,
+            'makkahDuration' : pkg.makkahDuration,
+            'madinaDuration' : pkg.madinaDuration,
+            'duration' : pkg.duration,
+            'price' : pkg.price
+        } 
+        for pkg in Packages.query.all() ]
+    return packageList
 
 @app.route('/card')
 def card():
@@ -118,4 +137,4 @@ def del_package(slug):
         return redirect(url_for('admin'))
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=5000)
