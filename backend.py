@@ -5,15 +5,18 @@ import random
 import json
 from flask_cors import CORS
 import time
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 cors = CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.sqlite"
 database = SQLAlchemy(app=app)
+migrate = Migrate(app, database)
 
 class Packages(database.Model):    
+    id = database.Column(database.String, primary_key=True)
     title = database.Column(database.String, unique=True, nullable=False)
-    slug = database.Column(database.String, primary_key=True)
+    slug = database.Column(database.String, unique=False, nullable=False)
     makkahHotel = database.Column(database.String, nullable=True)
     madinaHotel = database.Column(database.String, nullable=True)
     makkahDuration = database.Column(database.Integer, nullable=True)
@@ -24,11 +27,14 @@ class Packages(database.Model):
 with app.app_context():
     database.create_all()
 
-# @app.route('/')
-# def home():
-#     random_image = random.choice(imageslist)
-#     packageList = Packages.query.all()
-#     return render_template('home.html', packageList=packageList, coverimage_filename=random_image, animation_duration=1000)
+def generate_id():
+    with app.app_context():
+        id = str(random.randint(111111,999999))
+        idInDB = Packages.query.filter_by(id=id).first()
+        if idInDB == None:
+            return id
+        else:
+            generate_id()
 
 @app.route('/api/pkgs')
 def api_pkgs():
@@ -47,10 +53,6 @@ def api_pkgs():
         } 
         packageList.append(obj)
     return {"list" : packageList}
-
-@app.route('/card')
-def card():
-    return render_template('card.html')
 
 @app.route('/admin')
 def admin():
@@ -72,6 +74,7 @@ def add_new_package():
         price = request.form.get('price')
         slug = title.replace(" ", "-")
         new_pkg = Packages(
+            id = generate_id(),
             title=title,
             duration=duration,
             makkahHotel=makkahHotel,
@@ -90,9 +93,9 @@ def add_new_package():
             e = "oops! an error occured"
             return render_template('error.html', redirect_url=redirect_url, interval=interval, error=e)
 
-@app.route('/admin/edit-package/<string:slug>', methods=['GET', 'POST'])
-def edit_package(slug):
-    selected_pkg = Packages.query.filter_by(slug=slug).first()
+@app.route('/admin/edit-package/<string:id>', methods=['GET', 'POST'])
+def edit_package(id):
+    selected_pkg = Packages.query.filter_by(id=id).first()
     if request.method == 'GET':
         return render_template('admin/edit-package.html', pkg=selected_pkg)
     elif request.method == 'POST':
@@ -118,16 +121,12 @@ def edit_package(slug):
             selected_pkg.database.session.commit()
             return redirect(url_for('admin'))
         except Exception as e:
-            redirect_url = '/admin'
-            # interval = 10
-            # e = "oops! an error occured"
-            # return render_template('error.html', redirect_url=redirect_url, interval=interval, error=e)
             return redirect(url_for('admin'))
         
 
-@app.route('/admin/delete-package/<string:slug>')
-def del_package(slug):
-    pkg = Packages.query.filter_by(slug=slug).first()
+@app.route('/admin/delete-package/<string:id>')
+def del_package(id):
+    pkg = Packages.query.filter_by(id=id).first()
     msg = "Package deleted successfully"
     try:
         database.session.delete(pkg)
@@ -137,4 +136,4 @@ def del_package(slug):
         return redirect(url_for('admin'))
 
 if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
